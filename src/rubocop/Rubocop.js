@@ -13,7 +13,7 @@ const CONFIG_FILE = '.rubocop.yml'
 const PARSE_ERROR_MSG = 'Rubocop: Parse error'
 const UNEXPECTED_ERROR_MSG = 'Rubocop: Unexpected error'
 const UNDEF_VERSION_ERROR_MSG = 'Unable to get rubocop version from linting output results.'
-const NO_FIXES_INFO_MSG = 'Linter-Rubocop: No fixes were made'
+const NO_FIXES_INFO_MSG = 'InSpecStyle: No fixes were made'
 
 const configFileFound = Symbol('configFileFound')
 
@@ -52,7 +52,7 @@ class Rubocop {
         } else {
           const corrections = Object.values(offenses)
             .reduce((off, { corrected }) => off + corrected, 0)
-          const message = `Linter-Rubocop: Fixed ${pluralize('offenses', corrections, true)} of ${offenseCount}`
+          const message = `InSpecStyle: Fixed ${pluralize('offenses', corrections, true)} of ${offenseCount}`
           if (!onSave) {
             if (corrections < offenseCount) {
               atom.notifications.addInfo(message)

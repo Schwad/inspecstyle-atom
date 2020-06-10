@@ -20,7 +20,7 @@ export default {
     const installLinterRubocopDeps = () => {
       this.idleCallbacks.delete(depsCallbackID)
       if (!atom.inSpecMode()) {
-        require('atom-package-deps').install('linter-rubocop', true)
+        require('atom-package-deps').install('inspecstyle', true)
       }
     }
 
@@ -33,7 +33,7 @@ export default {
     this.subscriptions.add(
       // Register autocorrect command
       atom.commands.add('atom-text-editor', {
-        'linter-rubocop:fix-file': async () => {
+        'inspecstyle:fix-file': async () => {
           const editor = atom.workspace.getActiveTextEditor()
           if (hasValidScope(editor, this.scopes)) {
             await this.fixFile(editor)
@@ -43,7 +43,7 @@ export default {
       atom.workspace.observeTextEditors((editor) => {
         editor.onDidSave(async () => {
           if (hasValidScope(editor, this.scopes)
-            && atom.config.get('linter-rubocop.fixOnSave')
+            && atom.config.get('inspecstyle.fixOnSave')
           ) {
             await this.fixFile(editor, { onSave: true })
           }
@@ -52,7 +52,7 @@ export default {
       atom.contextMenu.add({
         'atom-text-editor:not(.mini), .overlayer': [{
           label: 'Fix file with Rubocop',
-          command: 'linter-rubocop:fix-file',
+          command: 'inspecstyle:fix-file',
           shouldDisplay: ({ path }) => {
             const activeEditor = atom.workspace.getActiveTextEditor()
             if (!activeEditor) {
@@ -70,19 +70,19 @@ export default {
           },
         }],
       }),
-      atom.config.observe('linter-rubocop.command', (value) => {
+      atom.config.observe('inspecstyle.command', (value) => {
         this.command = value
       }),
-      atom.config.observe('linter-rubocop.disableWhenNoConfigFile', (value) => {
+      atom.config.observe('inspecstyle.disableWhenNoConfigFile', (value) => {
         this.disableWhenNoConfigFile = value
       }),
-      atom.config.observe('linter-rubocop.useBundler', (value) => {
+      atom.config.observe('inspecstyle.useBundler', (value) => {
         this.useBundler = value
       }),
 
       atom.config.onDidChange(({ newValue, oldValue }) => {
-        const newConfig = newValue['linter-rubocop']
-        const oldConfig = oldValue['linter-rubocop']
+        const newConfig = newValue['inspecstyle']
+        const oldConfig = oldValue['inspecstyle']
         if (Object.entries(newConfig).toString() === Object.entries(oldConfig).toString()) {
           return
         }
@@ -108,7 +108,7 @@ export default {
       return
     }
     if (editor.isModified()) {
-      atom.notifications.addError('Linter-Rubocop: Please save before fix file')
+      atom.notifications.addError('InSpecStyle: Please save before fix file')
     }
     const text = editor.getText()
     if (text.length === 0) {

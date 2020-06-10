@@ -9,7 +9,7 @@ export default class ErrorFormatter {
 
   format(filePath, message) {
     return [{
-      excerpt: `Linter-Rubocop: ${message}`,
+      excerpt: `InSpecStyle: ${message}`,
       severity: 'error',
       location: {
         file: filePath,
