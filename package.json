@@ -1,7 +1,7 @@
 {
   "name": "inspecstyle",
   "main": "./src/index.js",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Lint Ruby on the fly, using rubocop",
   "repository": "https://github.com/schwad/inspecstyle-atom",
@@ -49,9 +49,6 @@
     "semver": "7.3.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "8.3.5",
-    "@commitlint/config-conventional": "8.3.4",
-    "@commitlint/travis-cli": "8.3.5",
     "@semantic-release/apm-config": "8.0.0",
     "eslint": "7.1.0",
     "eslint-config-airbnb-base": "14.1.0",
@@ -116,15 +113,5 @@
   },
   "release": {
     "extends": "@semantic-release/apm-config"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
   }
 }
