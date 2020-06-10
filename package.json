@@ -1,10 +1,10 @@
 {
-  "name": "linter-rubocop",
+  "name": "inspecstyle",
   "main": "./src/index.js",
   "version": "2.5.7",
   "private": true,
   "description": "Lint Ruby on the fly, using rubocop",
-  "repository": "https://github.com/AtomLinter/linter-rubocop",
+  "repository": "https://github.com/schwad/inspecstyle-atom",
   "license": "MIT",
   "engines": {
     "atom": ">=1.30.0 <2.0.0"
@@ -12,7 +12,7 @@
   "configSchema": {
     "command": {
       "type": "string",
-      "default": "rubocop",
+      "default": "rubocop --only InSpecStyle",
       "description": "This is the absolute path to your `rubocop` command. You may need to run `which rubocop` or `rbenv which rubocop` to find this. Examples: `/usr/local/bin/rubocop` or `/usr/local/bin/bundle exec rubocop --config /my/rubocop.yml`."
     },
     "disableWhenNoConfigFile": {
