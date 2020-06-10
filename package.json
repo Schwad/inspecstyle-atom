@@ -1,10 +1,10 @@
 {
   "name": "inspecstyle",
   "main": "./src/index.js",
-  "version": "0.3.0",
+  "version": "2.6.1",
   "private": true,
   "description": "Lint Ruby on the fly, using rubocop",
-  "repository": "https://github.com/schwad/inspecstyle-atom",
+  "repository": "https://github.com/schwad/inspecstyle_atom",
   "license": "MIT",
   "engines": {
     "atom": ">=1.30.0 <2.0.0"
