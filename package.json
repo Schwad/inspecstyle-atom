@@ -1,7 +1,7 @@
 {
   "name": "inspecstyle",
   "main": "./src/index.js",
-  "version": "2.9.0",
+  "version": "2.9.1",
   "private": true,
   "description": "Lint InSpec on the fly",
   "repository": "https://github.com/schwad/inspecstyle-atom",
