@@ -3,7 +3,7 @@
   "main": "./src/index.js",
   "version": "2.9.0",
   "private": true,
-  "description": "Lint Ruby on the fly, using rubocop",
+  "description": "Lint InSpec on the fly",
   "repository": "https://github.com/schwad/inspecstyle-atom",
   "license": "MIT",
   "engines": {
