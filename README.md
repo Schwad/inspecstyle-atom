@@ -1,6 +1,9 @@
+# WIP: This package is __not__ live, but we would love your help and input! Core issue here: https://github.com/inspec/inspec/issues/5095
+
+
 # InSpecStyle
 
-This is a fork of [inspecstyle](https://atom.io/packages/inspecstyle) meant as a starting place for the inspecstyle atom package, which applies style guide suggestions to InSpec code.
+This is a fork of [linter-rubocop](https://atom.io/packages/linter-rubocop) meant as a starting place for the inspecstyle atom package, which applies style guide suggestions to InSpec code.
 
 
 ## TODO:
